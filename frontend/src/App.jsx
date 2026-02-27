@@ -5,6 +5,7 @@ function App() {
   const [url, setUrl] = useState('');
   const [taskId, setTaskId] = useState(null);
   const [status, setStatus] = useState(null); // 'queued', 'downloading', 'extracting', 'generating', 'completed', 'error'
+  const [isHuman, setIsHuman] = useState(false);
   const [message, setMessage] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -92,11 +93,24 @@ function App() {
             />
           </div>
 
+          <div className="captcha-container">
+            <label className="checkbox-wrap">
+              <input
+                type="checkbox"
+                checked={isHuman}
+                onChange={(e) => setIsHuman(e.target.checked)}
+              />
+              <span className="checkmark"></span>
+              I am not a robot
+            </label>
+            <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" className="captcha-logo" alt="reCaptcha limit" />
+          </div>
+
           <div className="action-row">
             <button
               type="submit"
               className="btn btn-primary"
-              disabled={isProcessing || !url}
+              disabled={isProcessing || !url || !isHuman}
             >
               {isProcessing ? (
                 <>
