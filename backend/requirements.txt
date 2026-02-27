@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+yt-dlp
+opencv-python-headless
+fpdf2
+Pillow
+scikit-image
+numpy
+python-multipart

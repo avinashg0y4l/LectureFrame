@@ -1,0 +1,284 @@
+1. Project Overview
+
+This project aims to build a web-based platform that converts YouTube videos and playlists into downloadable PDF slides by extracting unique frames automatically.
+
+The system will:
+
+Accept YouTube video or playlist URLs
+
+Download and process the videos
+
+Extract important frames using similarity detection
+
+Generate a structured PDF
+
+Provide download access to users
+
+The platform will be fully automated from input to PDF generation.
+
+2. Objectives
+
+Build a fully automated backend processing system
+
+Provide a clean and simple frontend interface
+
+Make the website SEO-friendly
+
+Deploy using free hosting platforms
+
+Allow scalable future upgrades
+
+3. System Architecture
+
+Frontend (User Interface)
+↓
+Backend API (Processing Server)
+↓
+Video Download & Frame Extraction
+↓
+PDF Generation
+↓
+Return Download File
+
+4. Core Features (MVP)
+4.1 Input Handling
+
+Accept single YouTube video URL
+
+Accept YouTube playlist URL
+
+Validate input before processing
+
+4.2 Video Processing
+
+Detect whether URL is video or playlist
+
+Extract video ID
+
+Download video using yt-dlp
+
+Restrict maximum video duration (e.g., 15–20 minutes)
+
+4.3 Frame Extraction
+
+Read video using OpenCV
+
+Compare frames using SSIM
+
+Save only unique frames
+
+Maintain timestamp for each frame
+
+4.4 PDF Generation
+
+Convert frames to landscape PDF
+
+Add timestamp on each slide
+
+Auto-adjust text color for visibility
+
+4.5 Output
+
+Generate downloadable PDF
+
+Delete temporary files after completion
+
+5. Technology Stack
+Backend
+
+Python
+
+FastAPI
+
+yt-dlp
+
+OpenCV
+
+FPDF
+
+Pillow
+
+scikit-image
+
+Hosting: Render (Free tier)
+
+Frontend
+
+HTML + CSS + JavaScript (or React)
+
+Mobile responsive design
+
+Hosting: Vercel (Free tier)
+
+Code Management
+
+GitHub repository
+
+Version control enabled
+
+Proper documentation (README)
+
+6. SEO Plan
+6.1 Target Keywords
+
+YouTube to PDF converter
+
+Convert YouTube video to slides
+
+Extract slides from YouTube
+
+YouTube playlist to PDF
+
+6.2 On-Page SEO
+
+Proper H1, H2 structure
+
+Meta title and description
+
+Fast loading pages
+
+FAQ section
+
+Blog section
+
+6.3 Technical SEO
+
+Sitemap.xml
+
+Robots.txt
+
+Google Search Console setup
+
+Mobile optimization
+
+7. Automation Workflow
+
+User submits URL
+
+Backend validates URL
+
+System checks if playlist or single video
+
+Video(s) downloaded automatically
+
+Frames extracted automatically
+
+PDF generated automatically
+
+Download link returned
+
+Temporary files deleted
+
+No manual intervention required.
+
+8. Security & Restrictions
+
+Limit maximum video duration
+
+Limit playlist length
+
+Add rate limiting
+
+Prevent multiple heavy requests
+
+Add disclaimer regarding YouTube content usage
+
+9. Deployment Plan
+
+Phase 1:
+
+Develop backend locally
+
+Test API endpoints
+
+Phase 2:
+
+Push backend to GitHub
+
+Deploy backend on Render
+
+Phase 3:
+
+Develop frontend
+
+Connect API
+
+Deploy frontend on Vercel
+
+Phase 4:
+
+SEO setup
+
+Google Search Console submission
+
+10. Team Responsibilities (For Anti Gravity Team)
+
+Backend Team:
+
+Convert Colab logic into production API
+
+Optimize frame extraction speed
+
+Implement error handling
+
+Deploy backend
+
+Frontend Team:
+
+Build clean UI
+
+Connect to backend
+
+Implement loading indicator
+
+Optimize responsiveness
+
+SEO Team:
+
+Create homepage content
+
+Write 10–15 blog articles
+
+Submit sitemap
+
+Build backlinks
+
+DevOps:
+
+Manage hosting
+
+Monitor server performance
+
+Handle scaling issues
+
+11. Timeline
+
+Day 1–2: Backend conversion
+Day 3: Backend deployment
+Day 4: Frontend development
+Day 5: Frontend deployment
+Day 6–7: SEO and testing
+
+12. Future Upgrades
+
+Transcript-to-PDF feature
+
+PPT export option
+
+Watermark branding
+
+User login system
+
+Background job queue
+
+Paid premium version
+
+13. Final Goal
+
+To build a fully automated, SEO-optimized, scalable YouTube-to-Slides platform that:
+
+Works without manual supervision
+
+Is hosted entirely on free infrastructure
+
+Can scale into a SaaS product in the future
